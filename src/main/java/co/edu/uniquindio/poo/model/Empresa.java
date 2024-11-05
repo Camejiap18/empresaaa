@@ -11,6 +11,9 @@ public class Empresa {
     private Collection<Cliente> listaClientes = new LinkedList<>();
     private Collection<Reserva> listaReservas = new LinkedList<>();
 
+    // Precio base por día
+    private final static double TARIFA_BASE = 3500.0;
+
     // Constructor de la clase Empresa
     public Empresa(String nombre, String NIT) {
         this.nombre = nombre;
@@ -34,16 +37,37 @@ public class Empresa {
         this.NIT = NIT;
     }
 
-    // Método toString
-    @Override
-    public String toString() {
-        return "Empresa [nombre=" + nombre + ", NIT=" + NIT + ", listaVehiculos=" + listaVehiculos + ", listaClientes="
-                + listaClientes + ", listaReservas=" + listaReservas + "]";
+    public Collection<Vehiculo> getListaVehiculos() {
+        return listaVehiculos;
+    }
+
+    public void setListaVehiculos(Collection<Vehiculo> listaVehiculos) {
+        this.listaVehiculos = listaVehiculos;
+    }
+
+    public Collection<Cliente> getListaClientes() {
+        return listaClientes;
+    }
+
+    public void setListaClientes(Collection<Cliente> listaClientes) {
+        this.listaClientes = listaClientes;
+    }
+
+    public Collection<Reserva> getListaReservas() {
+        return listaReservas;
+    }
+
+    public void setListaReservas(Collection<Reserva> listaReservas) {
+        this.listaReservas = listaReservas;
     }
 
     // Métodos CRUD para Vehiculos
-    public void agregarVehiculo(Vehiculo vehiculo) {
-        listaVehiculos.add(vehiculo);
+    public int agregarVehiculo(Vehiculo vehiculo) {
+        if (vehiculo != null) {
+            listaVehiculos.add(vehiculo);
+            return 1;
+        }
+        return 0;
     }
 
     public Vehiculo buscarVehiculo(String matricula) {
@@ -55,53 +79,69 @@ public class Empresa {
         return null;
     }
 
-    public void actualizarVehiculo(Vehiculo vehiculo) {
-        Vehiculo vehiculoExistente = buscarVehiculo(vehiculo.getMatricula());
+    public int actualizarVehiculo(Vehiculo vehiculo, String matricula) {
+        Vehiculo vehiculoExistente = buscarVehiculo(matricula);
         if (vehiculoExistente != null) {
             listaVehiculos.remove(vehiculoExistente);
             listaVehiculos.add(vehiculo);
+            return 1;
         }
+        return 0;
     }
 
-    public void eliminarVehiculo(String matricula) {
+    public int eliminarVehiculo(String matricula) {
         Vehiculo vehiculo = buscarVehiculo(matricula);
         if (vehiculo != null) {
             listaVehiculos.remove(vehiculo);
+            return 1;
         }
+        return 0;
     }
 
     // Métodos CRUD para Clientes
-    public void agregarCliente(Cliente cliente) {
-        listaClientes.add(cliente);
+    public int agregarCliente(Cliente cliente) {
+        if (cliente != null) {
+            listaClientes.add(cliente);
+            return 1;
+        }
+        return 0;
     }
 
-    public Cliente buscarCliente(String cedula) {
+    public Cliente buscarCliente(String ID) {
         for (Cliente cliente : listaClientes) {
-            if (cliente.getCedula().equals(cedula)) {
+            if (cliente.getID().equals(ID)) {
                 return cliente;
             }
         }
         return null;
     }
 
-    public void actualizarCliente(Cliente cliente) {
-        Cliente clienteExistente = buscarCliente(cliente.getCedula());
+    public int actualizarCliente(Cliente cliente, String ID) {
+        Cliente clienteExistente = buscarCliente(ID);
         if (clienteExistente != null) {
             listaClientes.remove(clienteExistente);
             listaClientes.add(cliente);
+            return 1;
         }
+        return 0;
     }
 
-    public void eliminarCliente(String cedula) {
-        Cliente cliente = buscarCliente(cedula);
+    public int eliminarCliente(String ID) {
+        Cliente cliente = buscarCliente(ID);
         if (cliente != null) {
             listaClientes.remove(cliente);
+            return 1;
         }
+        return 0;
     }
 
     // Métodos CRUD para Reservas
-    public void agregarReserva(Reserva reserva) {
-        listaReservas.add(reserva);
+    public int agregarReserva(Reserva reserva) {
+        if (reserva != null) {
+            listaReservas.add(reserva);
+            return 1;
+        }
+        return 0;
     }
 
     public Reserva buscarReserva(String ID) {
@@ -113,18 +153,45 @@ public class Empresa {
         return null;
     }
 
-    public void actualizarReserva(Reserva reserva) {
-        Reserva reservaExistente = buscarReserva(reserva.getID());
+    public int actualizarReserva(Reserva reserva, String ID) {
+        Reserva reservaExistente = buscarReserva(ID);
         if (reservaExistente != null) {
             listaReservas.remove(reservaExistente);
             listaReservas.add(reserva);
+            return 1;
         }
+        return 0;
     }
 
-    public void eliminarReserva(String ID) {
+    public int eliminarReserva(String ID) {
         Reserva reserva = buscarReserva(ID);
         if (reserva != null) {
             listaReservas.remove(reserva);
+            return 1;
         }
+        return 0;
     }
+
+    // Método para calcular el precio de la reserva de un vehículo
+    public double calcularCostoReserva(Reserva reserva) {
+        Vehiculo vehiculo = reserva.getVehiculo();
+        int dias = reserva.getCantidadDias();
+        double costo = TARIFA_BASE * dias;
+
+        if (vehiculo instanceof Auto) {
+            // Costo de la reserva para un Auto
+            costo = TARIFA_BASE * dias;
+        } else if (vehiculo instanceof Moto) {
+            // Costo de la reserva para una Moto
+            if (((Moto) vehiculo).getCajaDeCambios() == CajaDeCambios.AUTOMATICA) {
+                costo += 1500.0 * dias; // Tarifa adicional por ser automática
+            }
+        } else if (vehiculo instanceof Camioneta) {
+            // Costo de la reserva para una Camioneta
+            costo += ((Camioneta) vehiculo).getCapacidadDeCarga() * 0.5 * dias; // Porcentaje extra por tonelada
+        }
+
+        return costo;
+    }
+
 }

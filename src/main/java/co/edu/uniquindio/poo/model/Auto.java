@@ -31,12 +31,6 @@ public class Auto extends Vehiculo{
         this.reserva = reserva;
     }
 
-    //Método abstracto
-    @Override
-    public double calcularCosto() {
-        return reserva.getTarifaAdicional() * reserva.getNumeroDias();
-    }
-
     //Método toString
     @Override
     public String toString() {

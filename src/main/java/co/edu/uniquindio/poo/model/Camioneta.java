@@ -36,14 +36,6 @@ public class Camioneta extends Vehiculo{
         return PORCENTAJE_EXTRA;
     }
 
-    //Método abstracto de la clase Padre
-    @Override
-    public double calcularCosto() {
-        double costoBase = reserva.getTarifaBase() * reserva.getNumeroDias();
-        double costoExtra = costoBase * (capacidadDeCarga * PORCENTAJE_EXTRA);
-        return costoBase + costoExtra;
-    }
-
     //Método toString
     @Override
     public String toString() {

@@ -53,9 +53,5 @@ public abstract class Vehiculo {
         return "Vehiculo [matricula=" + matricula + ", marca=" + marca + ", modelo=" + modelo + ", anioFabricacion="
                 + anioFabricacion + "]";
     }
-
-    //Método abstracto
-    public abstract double calcularCosto();
     
-
 }

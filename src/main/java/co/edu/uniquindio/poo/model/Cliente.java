@@ -2,45 +2,54 @@ package co.edu.uniquindio.poo.model;
 
 public class Cliente {
 
-    public String nombre, cedula, correo;
+    public String usser, ID, mail, password;
 
     
     //Costructor de la clase Cliente
-    public Cliente(String nombre, String cedula, String correo) {
-        this.nombre = nombre;
-        this.cedula = cedula;
-        this.correo = correo;
+    public Cliente(String usser, String ID, String mail, String password) {
+        this.usser = usser;
+        this.ID = ID;
+        this.mail = mail;
+        this.password = password;
     }
 
-    //Getters y setters de la clase Cliente
-    public String getNombre() {
-        return nombre;
+    //Getters y setters
+    public String getUsser() {
+        return usser;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setUsser(String usser) {
+        this.usser = usser;
     }
 
-    public String getCedula() {
-        return cedula;
+    public String getID() {
+        return ID;
     }
 
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
+    public void setID(String iD) {
+        ID = iD;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getMail() {
+        return mail;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     //Método toString
     @Override
     public String toString() {
-        return "Cliente [nombre=" + nombre + ", cedula=" + cedula + ", correo=" + correo + "]";
+        return "Cliente [usser=" + usser + ", ID=" + ID + ", mail=" + mail + ", password=" + password + "]";
     }
-
+ 
 }

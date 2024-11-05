@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="807.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <tabs>
+    <Tab text="Auto">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="446.0" prefWidth="807.0">
+               <children>
+                  <Label layoutX="36.0" layoutY="13.0" text="Matrícula Auto:" />
+                  <Label layoutX="45.0" layoutY="47.0" text="Marca Auto:" />
+                  <Label layoutX="41.0" layoutY="81.0" text="Modelo Auto:" />
+                  <Label layoutX="26.0" layoutY="115.0" text="Año de fabricación:" />
+                  <Label layoutX="24.0" layoutY="146.0" text="Número de Puertas:" />
+                  <TextField layoutX="150.0" layoutY="8.0" prefHeight="26.0" prefWidth="610.0" />
+                  <TextField layoutX="150.0" layoutY="43.0" prefHeight="26.0" prefWidth="610.0" />
+                  <TextField layoutX="150.0" layoutY="77.0" prefHeight="26.0" prefWidth="611.0" />
+                  <TextField layoutX="150.0" layoutY="115.0" prefHeight="26.0" prefWidth="610.0" />
+                  <TextField layoutX="150.0" layoutY="150.0" prefHeight="26.0" prefWidth="609.0" />
+                  <Separator layoutY="176.0" prefHeight="2.0" prefWidth="807.0" />
+                  <Button layoutX="75.0" layoutY="187.0" mnemonicParsing="false" text="Agregar Auto">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="232.0" layoutY="187.0" mnemonicParsing="false" text="Actualizar Auto">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="412.0" layoutY="187.0" mnemonicParsing="false" text="Eliminar Auto">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Button>
+                  <Separator layoutY="221.0" prefHeight="8.0" prefWidth="807.0" />
+                  <Separator layoutX="584.0" layoutY="176.0" orientation="VERTICAL" prefHeight="48.0" prefWidth="1.0" />
+                  <Button layoutX="662.0" layoutY="187.0" mnemonicParsing="false" text="Siguiente">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Button>
+                  <TableView layoutX="8.0" layoutY="229.0" prefHeight="201.0" prefWidth="792.0">
+                    <columns>
+                      <TableColumn prefWidth="172.80001831054688" text="MATRICULA AUTO" />
+                      <TableColumn prefWidth="159.99996948242188" text="MARCA AUTO" />
+                        <TableColumn prefWidth="154.4000244140625" text="MODELO AUTO" />
+                        <TableColumn prefWidth="147.199951171875" text="AÑO DE FABRICACIÓN" />
+                        <TableColumn prefWidth="156.800048828125" text="NÚMERO DE PUERTAS" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Camioneta">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="37.0" layoutY="14.0" text="Matricula Camioneta: " />
+                  <Label layoutX="45.0" layoutY="45.0" text="Marca Camioneta: " />
+                  <TextField layoutX="186.0" layoutY="9.0" prefHeight="26.0" prefWidth="571.0" />
+                  <TextField layoutX="186.0" layoutY="49.0" prefHeight="26.0" prefWidth="571.0" />
+                  <TextField layoutX="186.0" layoutY="85.0" prefHeight="26.0" prefWidth="571.0" />
+                  <Label layoutX="41.0" layoutY="81.0" text="Modelo Camioneta: " />
+                  <Label layoutX="51.0" layoutY="123.0" text="Año Fabricación:" />
+                  <TextField layoutX="186.0" layoutY="119.0" prefHeight="26.0" prefWidth="571.0" />
+                  <Label layoutX="41.0" layoutY="164.0" text="Capacidad de Carga:" />
+                  <TextField layoutX="186.0" layoutY="159.0" prefHeight="26.0" prefWidth="571.0" />
+                  <Separator layoutY="193.0" prefHeight="0.0" prefWidth="807.0" />
+                  <Button layoutX="62.0" layoutY="206.0" mnemonicParsing="false" text="Agregar Camioneta">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="226.0" layoutY="206.0" mnemonicParsing="false" text="Actualizar Camioneta">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="393.0" layoutY="206.0" mnemonicParsing="false" text="Eliminar Camioneta">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="663.0" layoutY="206.0" mnemonicParsing="false" text="Siguiente">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Button>
+                  <Separator layoutY="240.0" prefHeight="0.0" prefWidth="807.0" />
+                  <Separator layoutX="570.0" layoutY="194.0" orientation="VERTICAL" prefHeight="46.0" prefWidth="6.0" />
+                  <TableView layoutX="9.0" layoutY="246.0" prefHeight="184.0" prefWidth="790.0">
+                    <columns>
+                      <TableColumn prefWidth="152.800048828125" text="MATRICULA CAMIONETA" />
+                      <TableColumn prefWidth="151.199951171875" text="MARCA CAMIONETA" />
+                        <TableColumn prefWidth="166.4000244140625" text="MODELO CAMIONETA" />
+                        <TableColumn prefWidth="160.0" text="AÑO FABRICACIÓN" />
+                        <TableColumn prefWidth="161.5999755859375" text="CAPACIDAD DE CARGA" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Moto">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="416.0" prefWidth="807.0">
+               <children>
+                  <Label layoutX="32.0" layoutY="13.0" text="Matricula Moto:" />
+                  <TextField layoutX="150.0" layoutY="9.0" prefHeight="26.0" prefWidth="611.0" />
+                  <Label layoutX="40.0" layoutY="52.0" text="Marca Moto:" />
+                  <TextField layoutX="150.0" layoutY="48.0" prefHeight="26.0" prefWidth="611.0" />
+                  <TextField layoutX="150.0" layoutY="85.0" prefHeight="26.0" prefWidth="611.0" />
+                  <TextField layoutX="151.0" layoutY="125.0" prefHeight="26.0" prefWidth="610.0" />
+                  <Label layoutX="40.0" layoutY="89.0" text="Modelo Moto:" />
+                  <Label layoutX="26.0" layoutY="129.0" text="Año de Fabricacion:" />
+                  <ComboBox layoutX="152.0" layoutY="164.0" prefHeight="26.0" prefWidth="609.0" />
+                  <Label layoutX="28.0" layoutY="168.0" text="Caja de Cambios:" />
+                  <Separator layoutY="200.0" prefHeight="0.0" prefWidth="807.0" />
+                  <Button layoutX="64.0" layoutY="209.0" mnemonicParsing="false" text="Agregar Moto">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="231.0" layoutY="209.0" mnemonicParsing="false" text="Actualizar Moto ">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="420.0" layoutY="209.0" mnemonicParsing="false" text="Eliminar Moto">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Button>
+                  <Separator layoutY="242.0" prefHeight="0.0" prefWidth="807.0" />
+                  <Separator layoutX="588.0" layoutY="203.0" orientation="VERTICAL" prefHeight="38.0" prefWidth="6.0" />
+                  <Button layoutX="665.0" layoutY="209.0" mnemonicParsing="false" text="Siguiente">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Button>
+                  <TableView layoutX="12.0" layoutY="249.0" prefHeight="182.0" prefWidth="787.0">
+                    <columns>
+                      <TableColumn prefWidth="171.20001220703125" text="MATRICULA MOTO" />
+                      <TableColumn prefWidth="202.4000244140625" text="MARCA MOTO" />
+                        <TableColumn prefWidth="203.20001220703125" text=" MODELO MOTO" />
+                        <TableColumn prefWidth="212.0" text="AÑO DE FABRICACION" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>

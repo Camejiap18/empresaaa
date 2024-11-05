@@ -35,14 +35,4 @@ public class Moto extends Vehiculo {
     public String toString() {
         return "Moto [cajaDeCambios=" + cajaDeCambios + ", reserva=" + reserva + "]";
     }
-
-    //Método abstracto de la clase Padre
-    @Override
-    public double calcularCosto() {
-        double costo = reserva.getTarifaBase() * reserva.getNumeroDias();
-        if (cajaDeCambios == CajaDeCambios.AUTOMATICA){
-            costo += reserva.getTarifaAdicional() * reserva.getNumeroDias();
-        }
-        return costo;
-    }
 }
